@@ -175,6 +175,61 @@ html {
   }
 }
 
+/* Small screen adjustments */
+@media (max-width: 640px) {
+  /* Reduce hero text sizes for very small screens */
+  .hero-title {
+    font-size: 2.5rem !important; /* Smaller than text-4xl */
+  }
+
+  /* Adjust section padding */
+  .section-padding {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  /* Smaller navbar height */
+  nav {
+    height: 3rem !important;
+  }
+
+  /* Adjust card padding */
+  .card {
+    padding: 1rem !important;
+  }
+
+  /* Smaller buttons */
+  .btn-primary {
+    padding: 0.5rem 1rem !important;
+    font-size: 0.875rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Extra small screens */
+  .hero-title {
+    font-size: 2rem !important;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem !important;
+    line-height: 1.5 !important;
+  }
+
+  /* Stack flex items vertically on very small screens */
+  .hero-flex {
+    flex-direction: column !important;
+    gap: 1rem !important;
+  }
+
+  /* Reduce gaps */
+  .gap-responsive {
+    gap: 0.5rem !important;
+  }
+}
+
 @keyframes shimmer {
 
   0%,

@@ -41,7 +41,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.15 }}
-          className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 mb-6"
+          className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 mb-6 hero-flex"
         >
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
@@ -62,7 +62,7 @@ const HeroSection = () => {
           </motion.div>
 
           <motion.h1
-            className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold font-mono tracking-tight text-center md:text-left order-2 md:order-1"
+            className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold font-mono tracking-tight text-center md:text-left order-2 md:order-1 hero-title"
           >
             <span className="text-shimmer">Fida Hussain</span>
           </motion.h1>
@@ -72,7 +72,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.35 }}
-          className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto mb-8 leading-relaxed"
+          className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto mb-8 leading-relaxed hero-subtitle"
         >
           B.Tech CSE at Lovely Professional University. Passionate about building AI-powered solutions, efficient systems, and solving real-world computational problems using Python, Java, and Machine Learning.
         </motion.p>
@@ -81,13 +81,13 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.45 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10"
+          className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10 gap-responsive"
         >
           <motion.a
             href="#about"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="px-8 py-3 rounded-full bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors shadow-lg shadow-primary/20 glow-pulse"
+            className="px-8 py-3 rounded-full bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors shadow-lg shadow-primary/20 glow-pulse btn-primary"
           >
             About Me
           </motion.a>
@@ -97,7 +97,7 @@ const HeroSection = () => {
             rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="px-8 py-3 rounded-full border border-border bg-card/50 backdrop-blur-sm font-medium hover:border-primary transition-colors"
+            className="px-8 py-3 rounded-full border border-border bg-card/50 backdrop-blur-sm font-medium hover:border-primary transition-colors btn-primary"
           >
             View Resume
           </motion.a>
