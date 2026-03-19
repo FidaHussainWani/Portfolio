@@ -50,23 +50,23 @@ const Index = () => {
           <CertificatesSection />
         </RoadmapNode>
 
-        {/* === EDUCATION === */}
-        <RoadmapNode icon={GraduationCap} label="Education" side="right" id="education" index={4}>
-          <EducationSection />
-        </RoadmapNode>
-
-        {/* === EXPERIENCE === */}
-        <RoadmapNode icon={Briefcase} label="Experience" side="left" id="experience" index={5}>
+          {/* === EXPERIENCE === */}
+        <RoadmapNode icon={Briefcase} label="Experience" side="left" id="experience" index={4}>
           <ExperienceSection />
         </RoadmapNode>
 
         {/* === ACHIEVEMENTS === */}
-        <RoadmapNode icon={Trophy} label="Achievements" side="right" id="achievements" index={6}>
+        <RoadmapNode icon={Trophy} label="Achievements" side="right" id="achievements" index={5}>
           <AchievementsSection />
         </RoadmapNode>
 
+        {/* === EDUCATION === */}
+        <RoadmapNode icon={GraduationCap} label="Education" side="right" id="education" index={6}>
+          <EducationSection />
+        </RoadmapNode>
+
         {/* === CONTACT === */}
-        <RoadmapNode icon={Mail} label="Destination" side="left" id="contact" index={7}>
+        <RoadmapNode icon={Mail} label="Contact" side="left" id="contact" index={7}>
           <ContactSection />
         </RoadmapNode>
       </RoadmapTimeline>

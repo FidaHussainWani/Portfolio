@@ -103,7 +103,7 @@ const HeroSection = () => {
             </DialogTrigger>
             <DialogContent className="sm:max-w-[425px]">
               <DialogHeader>
-                <DialogTitle>About Me</DialogTitle>
+                <DialogTitle>Description</DialogTitle>
               </DialogHeader>
               <div className="text-sm text-muted-foreground leading-relaxed">
                 I am a Computer Science student passionate about software development, data structures, and machine learning. I have experience working with C++, Java, and web technologies, and I enjoy applying my knowledge to build practical and scalable applications. I am always eager to learn new technologies and enhance my problem-solving skills.
