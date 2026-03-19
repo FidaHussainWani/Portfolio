@@ -1,11 +1,19 @@
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import heroBg from "@/assets/hero-bg.jpg";
 import { Github, Linkedin, Mail, Phone } from "lucide-react";
 import FloatingParticles from "./FloatingParticles";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
 const HeroSection = () => {
   const ref = useRef<HTMLElement>(null);
+  const [isDescriptionOpen, setIsDescriptionOpen] = useState(false);
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end start"],
@@ -41,7 +49,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.15 }}
-          className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 mb-6 hero-flex"
+          className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 mb-6"
         >
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
@@ -62,7 +70,7 @@ const HeroSection = () => {
           </motion.div>
 
           <motion.h1
-            className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold font-mono tracking-tight text-center md:text-left order-2 md:order-1 hero-title"
+            className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold font-mono tracking-tight text-center md:text-left order-2 md:order-1"
           >
             <span className="text-shimmer">Fida Hussain</span>
           </motion.h1>
@@ -72,32 +80,43 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.35 }}
-          className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto mb-8 leading-relaxed hero-subtitle"
+          className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto mb-8 leading-relaxed"
         >
-          B.Tech CSE at Lovely Professional University. Passionate about building AI-powered solutions, efficient systems, and solving real-world computational problems using Python, Java, and Machine Learning.
+          Computer Science student passionate about software development, machine learning, and building real-world solutions through problem solving.
         </motion.p>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.45 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10 gap-responsive"
+          className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10"
         >
-          <motion.a
-            href="#about"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="px-8 py-3 rounded-full bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors shadow-lg shadow-primary/20 glow-pulse btn-primary"
-          >
-            About Me
-          </motion.a>
+          <Dialog open={isDescriptionOpen} onOpenChange={setIsDescriptionOpen}>
+            <DialogTrigger asChild>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-8 py-3 rounded-full bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors shadow-lg shadow-primary/20 glow-pulse"
+              >
+                Description
+              </motion.button>
+            </DialogTrigger>
+            <DialogContent className="sm:max-w-[425px]">
+              <DialogHeader>
+                <DialogTitle>About Me</DialogTitle>
+              </DialogHeader>
+              <div className="text-sm text-muted-foreground leading-relaxed">
+                I am a Computer Science student passionate about software development, data structures, and machine learning. I have experience working with C++, Java, and web technologies, and I enjoy applying my knowledge to build practical and scalable applications. I am always eager to learn new technologies and enhance my problem-solving skills.
+              </div>
+            </DialogContent>
+          </Dialog>
           <motion.a
             href="/resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="px-8 py-3 rounded-full border border-border bg-card/50 backdrop-blur-sm font-medium hover:border-primary transition-colors btn-primary"
+            className="px-8 py-3 rounded-full border border-border bg-card/50 backdrop-blur-sm font-medium hover:border-primary transition-colors"
           >
             View Resume
           </motion.a>
